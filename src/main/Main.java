@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        int a, b, c, aux;
+        int a, b, c, d, e, aux;
         Scanner in = new Scanner(System.in);
 
         System.out.println("Enter the numbers: ");
@@ -12,6 +12,8 @@ public class Main {
         a = in.nextInt();
         b = in.nextInt();
         c = in.nextInt();
+        d = in.nextInt();
+        e = in.nextInt();
 
         in.close();
 
@@ -25,11 +27,47 @@ public class Main {
             a = c;
             c = aux;
         }
+        if (a > d) {
+            aux = a;
+            a = d;
+            d = aux;
+        }
+        if (a > e) {
+            aux = e;
+            a = e;
+            e = aux;
+        }
         if (b > c) {
             aux = b;
             b = c;
             c = aux;
         }
-        System.out.println("Result: " + a + ", " + b + ", " + c);
+        if (b > d) {
+            aux = b;
+            b = d;
+            d = aux;
+        }
+        if (b > e) {
+            aux = b;
+            b = e;
+            e = aux;
+        }
+        if (c > d) {
+            aux = c;
+            c = d;
+            d = aux;
+        }
+        if (c > e) {
+            aux = c;
+            c = e;
+            e = aux;
+        }
+        if (d > e) {
+            aux = d;
+            d = e;
+            e = aux;
+        }
+
+        System.out.println("Result: " + a + ", " + b + ", " + c + ", " + d + ", " + e);
     }
 }
