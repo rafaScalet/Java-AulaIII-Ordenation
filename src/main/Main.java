@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        int a, b, c, bigger;
+        int a, b, c, aux;
         Scanner in = new Scanner(System.in);
 
         System.out.println("Enter the numbers: ");
@@ -15,14 +15,21 @@ public class Main {
 
         in.close();
 
-        bigger = a;
-
-        if (b > bigger && b > c) {
-            bigger = b;
-        } else if (c > bigger) {
-            bigger = c;
+        if (a > b) {
+            aux = a;
+            a = b;
+            b = aux;
         }
-
-        System.out.println("bigger: " + bigger);
+        if (a > c) {
+            aux = a;
+            a = c;
+            c = aux;
+        }
+        if (b > c) {
+            aux = b;
+            b = c;
+            c = aux;
+        }
+        System.out.println("Result: " + a + ", " + b + ", " + c);
     }
 }
